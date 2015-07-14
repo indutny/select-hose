@@ -1,6 +1,6 @@
 {
   "name": "select-hose",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Select protocol using first bytes of incoming data and hose stuff to the handler",
   "main": "lib/hose.js",
   "scripts": {
