@@ -30,7 +30,8 @@ describe('Select Hose', function() {
         return callback(null, 'http');
     });
 
-    filter.on('spdy', function(socket) {
+    filter.on('select', function(protocol, socket) {
+      assert.equal(protocol, 'spdy');
       socket.on('data', function(chunk) {
         assert.equal(chunk.toString('hex'), '80030001');
         done();
@@ -51,7 +52,8 @@ describe('Select Hose', function() {
         return callback(null, 'http');
     });
 
-    filter.on('spdy', function(socket) {
+    filter.on('select', function(protocol, socket) {
+      assert.equal(protocol, 'spdy');
       socket.on('data', function(chunk) {
         assert.equal(chunk.toString('hex'), '80030001');
         done();
@@ -75,7 +77,8 @@ describe('Select Hose', function() {
         return callback(null, 'http');
     });
 
-    filter.on('spdy', function(socket) {
+    filter.on('select', function(protocol, socket) {
+      assert.equal(protocol, 'spdy');
       fixtures.expectData(socket, 'abcd', done);
     });
 
